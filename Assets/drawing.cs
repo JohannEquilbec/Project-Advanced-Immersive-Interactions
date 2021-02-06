@@ -5,7 +5,7 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 public class drawing : MonoBehaviour
 {
-    public InputHelpers.Button drawInput;
+    public OVRInput.Button drawInput;
     public Transform drawPositionSource;
     public float lineWidth = 0.03f;
     public Material lineMaterial;
@@ -14,6 +14,7 @@ public class drawing : MonoBehaviour
     private List<Vector3> currentLinePositions = new List<Vector3>();
     private XRController controller;
     private bool isDrawing = false;
+    private bool isPressed = false;
     private LineRenderer currentLine;
 
     // Start is called before the first frame update
@@ -26,8 +27,11 @@ public class drawing : MonoBehaviour
     void Update()
     {
         //Check if input down
-        InputHelpers.IsPressed(controller.inputDevice, drawInput, out bool isPressed);
-
+        //OVRInput.Button.IsPressed(controller.inputDevice, drawInput, out bool isPressed);
+        if (OVRInput.Get(OVRInput.Button.One)== true)
+        {
+            isPressed = true;
+        }
         if (!isDrawing && isPressed)
         {
             StartDrawing();
