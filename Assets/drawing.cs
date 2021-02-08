@@ -5,6 +5,8 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 public class drawing : MonoBehaviour
 {
+    public AudioClip painting;
+
     public OVRInput.Button drawInput;
     public Transform drawPositionSource;
     public float lineWidth = 0.03f;
@@ -98,5 +100,11 @@ public class drawing : MonoBehaviour
         {
             UpdateLine();
         }
+        MakeSound(painting);
+    }
+
+    private void MakeSound(AudioClip originalClip)
+    {
+        AudioSource.PlayClipAtPoint(originalClip, transform.position);
     }
 }
