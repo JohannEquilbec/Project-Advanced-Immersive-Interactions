@@ -28,10 +28,16 @@ public class drawing : MonoBehaviour
     {
         //Check if input down
         //OVRInput.Button.IsPressed(controller.inputDevice, drawInput, out bool isPressed);
-        if (OVRInput.Get(OVRInput.Button.One)== true)
+        if (OVRInput.Get(OVRInput.Button.One) == true)
         {
             isPressed = true;
         }
+        else
+        {
+            isPressed = false;
+        }
+
+
         if (!isDrawing && isPressed)
         {
             StartDrawing();
