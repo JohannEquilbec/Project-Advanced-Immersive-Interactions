@@ -67,6 +67,7 @@ public class drawing : MonoBehaviour
         currentLine = lineGameObject.AddComponent<LineRenderer>();
 
         UpdateLine();
+        MakeSound(painting);
     }
 
     void UpdateLine()
@@ -100,7 +101,7 @@ public class drawing : MonoBehaviour
         {
             UpdateLine();
         }
-        MakeSound(painting);
+        
     }
 
     private void MakeSound(AudioClip originalClip)
