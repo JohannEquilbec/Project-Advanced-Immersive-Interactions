@@ -7,6 +7,9 @@ public class drawing : MonoBehaviour
 {
     public AudioClip painting;
 
+    AudioSource m_MyAudioSource;
+
+
     public OVRInput.Button drawInput;
     public Transform drawPositionSource;
     public float lineWidth = 0.03f;
@@ -23,6 +26,7 @@ public class drawing : MonoBehaviour
     void Start()
     {
         controller = GetComponent<XRController>();
+        m_MyAudioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -67,7 +71,8 @@ public class drawing : MonoBehaviour
         currentLine = lineGameObject.AddComponent<LineRenderer>();
 
         UpdateLine();
-        MakeSound(painting);
+        //MakeSound(painting);
+        m_MyAudioSource.Play();
     }
 
     void UpdateLine()
@@ -88,6 +93,7 @@ public class drawing : MonoBehaviour
         isDrawing = false;
         currentLinePositions.Clear();
         currentLine = null;
+        m_MyAudioSource.Stop();
     }
 
     void UpdateDrawing()
@@ -105,6 +111,10 @@ public class drawing : MonoBehaviour
     }
 
     private void MakeSound(AudioClip originalClip)
+    {
+        AudioSource.PlayClipAtPoint(originalClip, transform.position);
+    }
+    private void StopSound(AudioClip originalClip)
     {
         AudioSource.PlayClipAtPoint(originalClip, transform.position);
     }
