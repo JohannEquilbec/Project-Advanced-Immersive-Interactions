@@ -1,11 +1,9 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using System;
+﻿using System;
 using System.Text;
 using UnityEngine;
 using UnityEngine.Windows.Speech;
 
-public class voice_Recognition : MonoBehaviour
+public class KeywordScript : MonoBehaviour
 {
     [SerializeField]
     private string[] m_Keywords;
@@ -14,11 +12,6 @@ public class voice_Recognition : MonoBehaviour
 
     void Start()
     {
-        m_Keywords = new string[3];
-        m_Keywords[1] = "Lofi";
-        m_Keywords[2] = "Rock";
-        m_Keywords[3] = "Classical";
-
         m_Recognizer = new KeywordRecognizer(m_Keywords);
         m_Recognizer.OnPhraseRecognized += OnPhraseRecognized;
         m_Recognizer.Start();
@@ -26,16 +19,10 @@ public class voice_Recognition : MonoBehaviour
 
     private void OnPhraseRecognized(PhraseRecognizedEventArgs args)
     {
-      if( args.text == m_Keywords[1]) {
-            Debug.Log("Lofi");
-        }
-      else if (args.text == m_Keywords[2])
-        {
-            Debug.Log("Rock");
-        }
-      else if (args.text == m_Keywords[3])
-        {
-            Debug.Log("Classical");
-        }
+        StringBuilder builder = new StringBuilder();
+        builder.AppendFormat("{0} ({1}){2}", args.text, args.confidence, Environment.NewLine);
+        builder.AppendFormat("\tTimestamp: {0}{1}", args.phraseStartTime, Environment.NewLine);
+        builder.AppendFormat("\tDuration: {0} seconds{1}", args.phraseDuration.TotalSeconds, Environment.NewLine);
+        Debug.Log(builder.ToString());
     }
 }
