@@ -36,7 +36,6 @@ public class Test : MonoBehaviour {
         pluginClass.CallStatic("changeQuestion", "Hello, How can I help you???");
         Debug.Log("Question Set");
 
-
         Debug.Log("Call 2 Started");
 
         // Calls the function from the jar file
