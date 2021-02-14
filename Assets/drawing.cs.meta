@@ -3,7 +3,10 @@ guid: 8d4608f2b906d2848ad250c4a025a395
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - painting: {instanceID: 0}
+  - drawPositionSource: {instanceID: 0}
+  - lineMaterial: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
