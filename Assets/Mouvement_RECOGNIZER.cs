@@ -9,7 +9,6 @@ using UnityEngine.Events;
 public class Mouvement_RECOGNIZER : MonoBehaviour
 {
     public XRNode inputSource;
-    public float inputThreshold = 0.1f;
     public Transform movementSource;
 
     public float newPositionThresholdDistance = 0.05f;
