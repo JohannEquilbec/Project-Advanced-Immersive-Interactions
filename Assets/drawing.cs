@@ -43,7 +43,6 @@ public class drawing : MonoBehaviour
             isPressed = false;
         }
 
-
         if (!isDrawing && isPressed)
         {
             StartDrawing();
@@ -108,14 +107,5 @@ public class drawing : MonoBehaviour
             UpdateLine();
         }
         
-    }
-
-    private void MakeSound(AudioClip originalClip)
-    {
-        AudioSource.PlayClipAtPoint(originalClip, transform.position);
-    }
-    private void StopSound(AudioClip originalClip)
-    {
-        AudioSource.PlayClipAtPoint(originalClip, transform.position);
     }
 }
