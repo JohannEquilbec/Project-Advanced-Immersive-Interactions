@@ -51,14 +51,18 @@ public class Mouvement_RECOGNIZER : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (OVRInput.Get(OVRInput.Button.Two) == true)
+            // on
+        if (OVRInput.Get(OVRInput.Button.Two) == true && isPressed == false)
         {
             isPressed = true;
         }
-        else
+
+            // off 
+        if (OVRInput.Get(OVRInput.Button.Two) == true && isPressed == true)
         {
             isPressed = false;
         }
+
         //Start The Movement
         if (!isMoving && isPressed)
         {
