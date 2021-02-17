@@ -3244,6 +3244,14 @@ PrefabInstance:
       propertyPath: _trackingOriginType
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 14300000, guid: ce816f2e6abb0504092c23ed9b970dfd, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400010, guid: ce816f2e6abb0504092c23ed9b970dfd, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ce816f2e6abb0504092c23ed9b970dfd, type: 3}
 --- !u!4 &1426438934 stripped
@@ -3670,8 +3678,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4133858333ed264ebae0d70265b7b6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AimButton: 67108864
-  TeleportButton: 67108864
+  AimButton: 0
+  TeleportButton: 4
   FastTeleport: 0
   LeftHand: {fileID: 0}
   RightHand: {fileID: 0}
