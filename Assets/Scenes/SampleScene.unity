@@ -4923,7 +4923,7 @@ MonoBehaviour:
   drawInput: 16384
   drawPositionSource: {fileID: 440478560}
   lineWidth: 0.03
-  lineMaterial: {fileID: 2100000, guid: 584662273d60a0f47bd7fecbb570e66e, type: 2}
+  lineMaterial: {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
   distanceThreshold: 0.05
 --- !u!114 &1978033138
 MonoBehaviour:
