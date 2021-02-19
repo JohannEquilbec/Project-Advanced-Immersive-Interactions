@@ -9,7 +9,6 @@ public class drawing : MonoBehaviour
 
     AudioSource m_MyAudioSource;
 
-
     public OVRInput.Button drawInput;
     public Transform drawPositionSource;
     public float lineWidth = 0.03f;
