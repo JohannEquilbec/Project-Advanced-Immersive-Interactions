@@ -4343,6 +4343,7 @@ GameObject:
   - component: {fileID: 1634412092}
   - component: {fileID: 1634412091}
   - component: {fileID: 1634412094}
+  - component: {fileID: 1634412095}
   m_Layer: 5
   m_Name: Red_btn
   m_TagString: Untagged
@@ -4473,6 +4474,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 100, y: 30, z: 0.1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1634412095
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1634412089}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd9de300e1079fd459e47ce820e65161, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  newMaterial: {fileID: 2100000, guid: 5e8ae0651ccef7b4c8a89415125bacd9, type: 2}
+  splash: {fileID: 8300000, guid: c44c7d8c819a4f047a33253db4396ef6, type: 3}
 --- !u!1 &1771744748
 GameObject:
   m_ObjectHideFlags: 0
