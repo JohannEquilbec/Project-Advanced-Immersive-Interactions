@@ -3055,6 +3055,7 @@ GameObject:
   - component: {fileID: 1081946499}
   - component: {fileID: 1081946498}
   - component: {fileID: 1081946501}
+  - component: {fileID: 1081946502}
   m_Layer: 5
   m_Name: Green_btn
   m_TagString: Untagged
@@ -3180,11 +3181,25 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1081946496}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 100, y: 30, z: 0.1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1081946502
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1081946496}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd9de300e1079fd459e47ce820e65161, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  newMaterial: {fileID: 2100000, guid: d7ebdd11889698f4f924b3f379cb9941, type: 2}
+  splash: {fileID: 8300000, guid: c44c7d8c819a4f047a33253db4396ef6, type: 3}
 --- !u!1 &1086011846
 GameObject:
   m_ObjectHideFlags: 0
@@ -4414,8 +4429,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: ColorChangeOnClick
+      - m_Target: {fileID: 11500000, guid: dd9de300e1079fd459e47ce820e65161, type: 3}
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4469,7 +4484,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1634412089}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 100, y: 30, z: 0.1}
@@ -5146,6 +5161,7 @@ GameObject:
   - component: {fileID: 2075619951}
   - component: {fileID: 2075619950}
   - component: {fileID: 2075619953}
+  - component: {fileID: 2075619954}
   m_Layer: 5
   m_Name: Blue_btn
   m_TagString: Untagged
@@ -5271,11 +5287,25 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2075619948}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 100, y: 30, z: 0.1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &2075619954
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2075619948}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd9de300e1079fd459e47ce820e65161, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  newMaterial: {fileID: 2100000, guid: 903442685ff54ee43acf3b0dbd0d4dea, type: 2}
+  splash: {fileID: 8300000, guid: c44c7d8c819a4f047a33253db4396ef6, type: 3}
 --- !u!1 &2092948145
 GameObject:
   m_ObjectHideFlags: 0
