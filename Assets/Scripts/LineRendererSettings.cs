@@ -35,7 +35,7 @@ public class LineRendererSettings : MonoBehaviour
         Ray ray;
         RaycastHit hit;
         ray = new Ray(transform.position, transform.forward);
-        Debug.DrawRay(ray.origin, ray.direction);
+        // Debug.DrawRay(ray.origin, ray.direction);
 
         if (Physics.Raycast(ray, out hit, layerMask)) {
             isHit = true;
@@ -84,5 +84,10 @@ public class LineRendererSettings : MonoBehaviour
     void Update()
     {
         AlignLineRenderer(rend);
+
+        if(AlignLineRenderer(rend) && Input.GetAxis("Submit") > 0)
+        {
+            btn.onClick.Invoke();
+        }
     }
 }
