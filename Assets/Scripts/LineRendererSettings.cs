@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class LineRendererSettings : MonoBehaviour
 {
-    [SerializeField] LineRederer rend;
+    [SerializeField] LineRenderer rend;
     Vector3[] points;
 
     public LayerMask layerMask;
@@ -18,7 +18,7 @@ public class LineRendererSettings : MonoBehaviour
 
         points[0] = Vector3.zero;
 
-        points[1] = transform.positioon + new Vector3(0, 0, 20);
+        points[1] = transform.position + new Vector3(0, 0, 20);
 
         rend.SetPositions(points);
 
@@ -32,7 +32,7 @@ public class LineRendererSettings : MonoBehaviour
 
         ray = new Ray(transform.position, transform.forward);
 
-        if (Physics.Raycast(ray, out hit, layerMask) {
+        if (Physics.Raycast(ray, out hit, layerMask)) {
             points[1] = transform.forward + new Vector3(0, 0, hit.distance);
         }
         else
