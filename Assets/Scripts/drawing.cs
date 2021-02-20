@@ -71,7 +71,7 @@ public class drawing : MonoBehaviour
        */
     }
 
-   
+
     // Update is called once per frame
     void Update()
     {
@@ -97,6 +97,11 @@ public class drawing : MonoBehaviour
         else if (isDrawing && isPressed)
         {
             UpdateDrawing();
+        }
+
+        if (OVRInput.Get(OVRInput.Button.DpadLeft) == true)
+        {
+            SetLineMaterial(pink);
         }
     }
 
@@ -168,38 +173,7 @@ public class drawing : MonoBehaviour
 
     //////////////////////////////// MENU ////////////////////////////////////
     
-    /// Color ///
-   public void OnClickRED(Material mat)
-    {
-        lineMaterial = mat;
-    }
-    /*
-    void OnClickPINk()
-    {
-        lineMaterial = pink;
-    }
-
-    void OnClickGREEN()
-    {
-        lineMaterial = green;
-    }
-
-    void OnClickYELLOW()
-    {
-        lineMaterial = yellow;
-    }
-
-    void OnClickWHITE()
-    {
-        lineMaterial = white;
-    }
-
-    void OnClickBLUE()
-    {
-        lineMaterial = blue;
-    }
-     */
-
+  
     /// SWAP /// 
     /// 
     public void OnClickSWAP()
