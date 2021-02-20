@@ -194,33 +194,6 @@ public class drawing : MonoBehaviour
                 UpdateDrawing();
             }
         }
-        else
-        {
-            //Start The Movement
-            if (!isMoving && isPressed)
-            {
-                strokeID = 0;
-                StartMovement();
-            }
-            //Ending The Movement
-            else if (isMoving && !isPressed)
-            {
-                timer += Time.deltaTime;
-                if (timer > recognitionDelay)
-                    EndMovement();
-            }
-            //Updating The Movement
-            else if (isMoving && isPressed)
-            {
-                if (timer > 0)
-                {
-                    strokeID++;
-                }
-
-                timer = 0;
-                UpdateMovement();
-            }
-        }
     
     }
 
@@ -319,37 +292,6 @@ public class drawing : MonoBehaviour
         }
         }
         
-    }
-
-    void StartMovement()
-    {
-        Debug.Log("Start Movement");
-        isMoving = true;
-        positionsList.Clear();
-        positionsList.Add(movementSource.position);
-
-        if (debugCubePrefab)
-            Destroy(Instantiate(debugCubePrefab, movementSource.position, Quaternion.identity), 3);
-    }
-
-    void EndMovement()
-    {
-        Debug.Log("End Movement");
-        isMoving = false;
-
-    }
-
-    void UpdateMovement()
-    {
-        Debug.Log("Update Movement");
-        Vector3 lastPosition = positionsList[positionsList.Count - 1];
-
-        if (Vector3.Distance(movementSource.position, lastPosition) > newPositionThresholdDistance)
-        {
-            positionsList.Add(movementSource.position);
-            if (debugCubePrefab)
-                Destroy(Instantiate(debugCubePrefab, movementSource.position, Quaternion.identity), 3);
-        }
     }
 
     //////////////////////////////// MENU ////////////////////////////////////

@@ -3166,6 +3166,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inputSource: 0
   movementSource: {fileID: 440478560}
+  persistant: 1
   newPositionThresholdDistance: 0.05
   debugCubePrefab: {fileID: 3438193521910164377, guid: 40055ae1ffdf5a641999ca891f05aee1,
     type: 3}
@@ -3242,6 +3243,13 @@ MonoBehaviour:
   lineWidth: 0.03
   lineMaterial: {fileID: 10306, guid: 0000000000000000f000000000000000, type: 3}
   distanceThreshold: 0.05
+  movementSource: {fileID: 0}
+  newPositionThresholdDistance: 0.05
+  debugCubePrefab: {fileID: 0}
+  creationMode: 1
+  newGestureName: 
+  recognitionThreshold: 0.9
+  recognitionDelay: 1.5
 --- !u!114 &861159703
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3537,6 +3545,17 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1978033137}
+        m_MethodName: OnClickSWAP
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1978033138}
         m_MethodName: OnClickSWAP
         m_Mode: 1
         m_Arguments:
@@ -6622,7 +6641,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 8f5467a9cc1e7aa47ba5a8adf8370949, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0
+  m_Volume: 0.399
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -6808,6 +6827,13 @@ MonoBehaviour:
   lineWidth: 0.03
   lineMaterial: {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
   distanceThreshold: 0.05
+  movementSource: {fileID: 0}
+  newPositionThresholdDistance: 0.05
+  debugCubePrefab: {fileID: 0}
+  creationMode: 1
+  newGestureName: 
+  recognitionThreshold: 0.9
+  recognitionDelay: 1.5
 --- !u!114 &1978033138
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6822,6 +6848,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inputSource: 0
   movementSource: {fileID: 440478560}
+  persistant: 1
   newPositionThresholdDistance: 0.05
   debugCubePrefab: {fileID: 3438193521910164377, guid: 40055ae1ffdf5a641999ca891f05aee1,
     type: 3}
@@ -7553,7 +7580,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2122998950}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.136, y: 1.113, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 773190230}

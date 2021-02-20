@@ -11,6 +11,8 @@ public class Mouvement_RECOGNIZER : MonoBehaviour
     public XRNode inputSource;
     public Transform movementSource;
 
+    public bool persistant = true;
+
     public float newPositionThresholdDistance = 0.05f;
     public GameObject debugCubePrefab;
     public bool creationMode = true;
@@ -51,41 +53,42 @@ public class Mouvement_RECOGNIZER : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-            // on
-        if (OVRInput.Get(OVRInput.Button.Two) == true && isPressed == false)
+        if (persistant == false)
         {
-            isPressed = true;
-        }
 
-            // off 
-        if (OVRInput.Get(OVRInput.Button.Two) == true && isPressed == true)
-        {
-            isPressed = false;
-        }
-
-        //Start The Movement
-        if (!isMoving && isPressed)
-        {
-            strokeID = 0;
-            StartMovement();
-        }
-        //Ending The Movement
-        else if (isMoving && !isPressed)
-        {
-            timer += Time.deltaTime;
-            if (timer > recognitionDelay)
-                EndMovement();
-        }
-        //Updating The Movement
-        else if (isMoving && isPressed)
-        {
-            if (timer > 0)
+            if (OVRInput.Get(OVRInput.Button.One) == true)
             {
-                strokeID++;
+                isPressed = true;
+            }
+            else
+            {
+                isPressed = false;
             }
 
-            timer = 0;
-            UpdateMovement();
+            //Start The Movement
+            if (!isMoving && isPressed)
+            {
+                strokeID = 0;
+                StartMovement();
+            }
+            //Ending The Movement
+            else if (isMoving && !isPressed)
+            {
+                timer += Time.deltaTime;
+                if (timer > recognitionDelay)
+                    EndMovement();
+            }
+            //Updating The Movement
+            else if (isMoving && isPressed)
+            {
+                if (timer > 0)
+                {
+                    strokeID++;
+                }
+
+                timer = 0;
+                UpdateMovement();
+            }
         }
     }
 
@@ -149,4 +152,17 @@ public class Mouvement_RECOGNIZER : MonoBehaviour
                 Destroy(Instantiate(debugCubePrefab, movementSource.position, Quaternion.identity), 3);
         }
     }
+
+    public void OnClickSWAP()
+    {
+        if (persistant == true)
+        {
+            persistant = false;
+        }
+        else
+        {
+            persistant = true;
+        }
+    }
+
 }
