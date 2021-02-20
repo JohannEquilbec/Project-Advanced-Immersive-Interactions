@@ -27,6 +27,8 @@ public class drawing : MonoBehaviour
     public Material white;
     public Material blue;
 
+    public bool persistant = true;
+
     public OVRInput.Button drawInput;
     public Transform drawPositionSource;
     public float lineWidth = 0.03f;
@@ -63,38 +65,12 @@ public class drawing : MonoBehaviour
 
         Button btnblue = RedButton.GetComponent<Button>();
         btnblue.onClick.AddListener(OnClickBLUE);
+
+        Button SwapButton = RedButton.GetComponent<Button>();
+        SwapButton.onClick.AddListener(OnClickSWAP);
     }
 
-    void OnClickRED()
-    {
-        lineMaterial = red;
-    }
-
-    void OnClickPINk()
-    {
-        lineMaterial = pink;
-    }
-
-    void OnClickGREEN()
-    {
-        lineMaterial = green;
-    }
-
-    void OnClickYELLOW()
-    {
-        lineMaterial = yellow;
-    }
-
-    void OnClickWHITE()
-    {
-        lineMaterial = white;
-    }
-
-    void OnClickBLUE()
-    {
-        lineMaterial = blue;
-    }
-
+   
     // Update is called once per frame
     void Update()
     {
@@ -130,6 +106,7 @@ public class drawing : MonoBehaviour
 
     void StartDrawing()
     {
+        if (persistant== true) { 
         isDrawing = true;
         //create line
         GameObject lineGameObject = new GameObject("Line");
@@ -138,40 +115,101 @@ public class drawing : MonoBehaviour
         UpdateLine();
         //MakeSound(painting);
         m_MyAudioSource.Play();
+        }
     }
 
     void UpdateLine()
     {
-        //update line
-        //update line position
-        currentLinePositions.Add(drawPositionSource.position);
-        currentLine.positionCount = currentLinePositions.Count;
-        currentLine.SetPositions(currentLinePositions.ToArray());
+        if (persistant == true)
+        {
+            //update line
+            //update line position
+            currentLinePositions.Add(drawPositionSource.position);
+            currentLine.positionCount = currentLinePositions.Count;
+            currentLine.SetPositions(currentLinePositions.ToArray());
 
-        //update line visual
-        currentLine.material = lineMaterial;
-        currentLine.startWidth = lineWidth;
+            //update line visual
+            currentLine.material = lineMaterial;
+            currentLine.startWidth = lineWidth;
+        }
     }
 
     void StopDrawing()
     {
+        if (persistant == true)
+        {
         isDrawing = false;
         currentLinePositions.Clear();
         currentLine = null;
         m_MyAudioSource.Stop();
     }
+    }
 
     void UpdateDrawing()
     {
-        //check if we have a line
-        if (!currentLine || currentLinePositions.Count == 0)
-            return;
 
-        Vector3 lastSetPosition = currentLinePositions[currentLinePositions.Count - 1];
-        if (Vector3.Distance(lastSetPosition, drawPositionSource.position) > distanceThreshold)
+        if (persistant == true)
         {
-            UpdateLine();
+            //check if we have a line
+            if (!currentLine || currentLinePositions.Count == 0)
+                return;
+
+            Vector3 lastSetPosition = currentLinePositions[currentLinePositions.Count - 1];
+            if (Vector3.Distance(lastSetPosition, drawPositionSource.position) > distanceThreshold)
+            {
+                UpdateLine();
+            }
         }
         
+    }
+
+
+
+    //////////////////////////////// MENU ////////////////////////////////////
+    
+    /// Color ///
+    void OnClickRED()
+    {
+        lineMaterial = red;
+    }
+
+    void OnClickPINk()
+    {
+        lineMaterial = pink;
+    }
+
+    void OnClickGREEN()
+    {
+        lineMaterial = green;
+    }
+
+    void OnClickYELLOW()
+    {
+        lineMaterial = yellow;
+    }
+
+    void OnClickWHITE()
+    {
+        lineMaterial = white;
+    }
+
+    void OnClickBLUE()
+    {
+        lineMaterial = blue;
+    }
+
+
+    /// SWAP /// 
+    /// 
+    void OnClickSWAP()
+    {
+        if ( persistant == true)
+        {
+            persistant = false;
+        }
+        else
+        {
+            persistant = true;
+        }
     }
 }
