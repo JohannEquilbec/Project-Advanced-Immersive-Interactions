@@ -29,6 +29,13 @@ public class drawing : MonoBehaviour
     public Material white;
     public Material blue;
 
+    public bool isRed;
+    public bool isPink;
+    public bool isGreen;
+    public bool isYellow;
+    public bool isWhite;
+    public bool isBlue;
+
     public bool persistant = true;
 
     public OVRInput.Button drawInput;
@@ -82,19 +89,68 @@ public class drawing : MonoBehaviour
     }
     public void DropdownValueChanged(Dropdown change)
     {
-        if (change.value == 1)
+        if (change.value == 0) // White
         {
-            SetLineMaterial(red);
+            isRed = false;
+            isPink = false;
+            isGreen = false;
+            isYellow = false;
+            isWhite = true;
+            isBlue = false;
         }
-        if (change.value == 2)
+        else if (change.value == 1) // Blue
         {
-            SetLineMaterial(white);
+            isRed = false;
+            isPink = false;
+            isGreen = false;
+            isYellow = false;
+            isWhite = false;
+            isBlue = true;
+        }
+        else if (change.value == 2) // Red
+        {
+            isRed = true;
+            isPink = false;
+            isGreen = false;
+            isYellow = false;
+            isWhite = false;
+            isBlue = false;
+        }
+        else if (change.value == 3) // Green
+        {
+            isRed = false;
+            isPink = false;
+            isGreen = true;
+            isYellow = false;
+            isWhite = false;
+            isBlue = false;
+        }
+        else if (change.value == 4) // Pink
+        {
+            isRed = false;
+            isPink = true;
+            isGreen = false;
+            isYellow = false;
+            isWhite = false;
+            isBlue = false;
+        }
+        else if (change.value == 5) // Yellow
+        {
+            isRed = false;
+            isPink = false;
+            isGreen = false;
+            isYellow = true;
+            isWhite = false;
+            isBlue = false;
         }
     }
 
     // Update is called once per frame
     void Update()
     {
+
+        SetRightColor();
+
         //Check if input down
         //OVRInput.Button.IsPressed(controller.inputDevice, drawInput, out bool isPressed);
         if (OVRInput.Get(OVRInput.Button.One) == true)
@@ -119,14 +175,37 @@ public class drawing : MonoBehaviour
             UpdateDrawing();
         }
 
-        if (5 > 0)
-        {
-            SetLineMaterial(green);
-        }
-
         if (OVRInput.Get(OVRInput.RawButton.DpadLeft) == true)
         {
             SetLineMaterial(blue);
+        }
+    }
+
+    public void SetRightColor()
+    {
+        if (isRed == true)
+        {
+            SetLineMaterial(red);
+        }
+        else if (isWhite)
+        {
+            SetLineMaterial(white);
+        }
+        else if (isYellow)
+        {
+            SetLineMaterial(yellow);
+        }
+        else if (isPink)
+        {
+            SetLineMaterial(pink);
+        }
+        else if (isBlue)
+        {
+            SetLineMaterial(blue);
+        }
+        else if (isGreen)
+        {
+            SetLineMaterial(green);
         }
     }
 
@@ -208,7 +287,7 @@ public class drawing : MonoBehaviour
     /// 
     public void OnClickSWAP()
     {
-        if ( persistant == true)
+        if (persistant == true)
         {
             persistant = false;
         }
