@@ -198,11 +198,11 @@ public class drawing : MonoBehaviour
     {
         lineMaterial = blue;
     }
-
+     */
 
     /// SWAP /// 
     /// 
-    void OnClickSWAP()
+    public void OnClickSWAP()
     {
         if ( persistant == true)
         {
@@ -213,5 +213,5 @@ public class drawing : MonoBehaviour
             persistant = true;
         }
     }
-    */
+   
 }
