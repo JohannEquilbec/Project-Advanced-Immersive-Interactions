@@ -48,6 +48,8 @@ public class drawing : MonoBehaviour
         controller = GetComponent<XRController>();
         m_MyAudioSource = GetComponent<AudioSource>();
 
+        lineMaterial = red;
+
        /* Button btnRed = RedButton.GetComponent<Button>();
         btnRed.onClick.AddListener(OnClickRED);
 
@@ -99,9 +101,14 @@ public class drawing : MonoBehaviour
             UpdateDrawing();
         }
 
-        if (OVRInput.Get(OVRInput.Button.DpadLeft) == true)
+        if (5 > 0)
         {
-            SetLineMaterial(pink);
+            SetLineMaterial(green);
+        }
+
+        if (OVRInput.Get(OVRInput.RawButton.DpadLeft) == true)
+        {
+            SetLineMaterial(blue);
         }
     }
 
