@@ -48,7 +48,7 @@ public class drawing : MonoBehaviour
         controller = GetComponent<XRController>();
         m_MyAudioSource = GetComponent<AudioSource>();
 
-        Button btnRed = RedButton.GetComponent<Button>();
+       /* Button btnRed = RedButton.GetComponent<Button>();
         btnRed.onClick.AddListener(OnClickRED);
 
         Button btnpink = RedButton.GetComponent<Button>();
@@ -68,6 +68,7 @@ public class drawing : MonoBehaviour
 
         Button SwapButton = RedButton.GetComponent<Button>();
         SwapButton.onClick.AddListener(OnClickSWAP);
+       */
     }
 
    
@@ -168,11 +169,11 @@ public class drawing : MonoBehaviour
     //////////////////////////////// MENU ////////////////////////////////////
     
     /// Color ///
-   public void OnClickRED()
+   public void OnClickRED(Material mat)
     {
-        lineMaterial = red;
+        lineMaterial = mat;
     }
-
+    /*
     void OnClickPINk()
     {
         lineMaterial = pink;
@@ -212,4 +213,5 @@ public class drawing : MonoBehaviour
             persistant = true;
         }
     }
+    */
 }
