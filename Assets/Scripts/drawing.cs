@@ -6,9 +6,9 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 public class drawing : MonoBehaviour
 {
-    public AudioClip painting;
+    //public AudioClip painting;
 
-    AudioSource m_MyAudioSource;
+    public AudioSource painting;
 
     //Palette button
     public Button RedButton;
@@ -72,7 +72,7 @@ public class drawing : MonoBehaviour
     void Start()
     {
         controller = GetComponent<XRController>();
-        m_MyAudioSource = GetComponent<AudioSource>();
+        painting = GetComponent<AudioSource>();
 
         lineMaterial = red;
 
@@ -245,7 +245,7 @@ public class drawing : MonoBehaviour
 
         UpdateLine();
         //MakeSound(painting);
-        m_MyAudioSource.Play();
+        painting.Play();
         }
     }
 
@@ -272,7 +272,7 @@ public class drawing : MonoBehaviour
         isDrawing = false;
         currentLinePositions.Clear();
         currentLine = null;
-        m_MyAudioSource.Stop();
+        painting.Stop();
     }
     }
 
@@ -291,7 +291,6 @@ public class drawing : MonoBehaviour
             UpdateLine();
         }
         }
-        
     }
 
     //////////////////////////////// MENU ////////////////////////////////////
