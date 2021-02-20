@@ -152,13 +152,13 @@ public class drawing : MonoBehaviour
         {
             //check if we have a line
             if (!currentLine || currentLinePositions.Count == 0)
-                return;
+            return;
 
-            Vector3 lastSetPosition = currentLinePositions[currentLinePositions.Count - 1];
-            if (Vector3.Distance(lastSetPosition, drawPositionSource.position) > distanceThreshold)
-            {
-                UpdateLine();
-            }
+        Vector3 lastSetPosition = currentLinePositions[currentLinePositions.Count - 1];
+        if (Vector3.Distance(lastSetPosition, drawPositionSource.position) > distanceThreshold)
+        {
+            UpdateLine();
+        }
         }
         
     }
@@ -168,7 +168,7 @@ public class drawing : MonoBehaviour
     //////////////////////////////// MENU ////////////////////////////////////
     
     /// Color ///
-    void OnClickRED()
+   public void OnClickRED()
     {
         lineMaterial = red;
     }
