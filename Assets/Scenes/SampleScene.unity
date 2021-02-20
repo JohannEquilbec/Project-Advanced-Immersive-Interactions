@@ -7542,7 +7542,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e988983f96fe1dd48800bcdfc82f23e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_LineWidth: 0.02
+  m_LineWidth: 0.018
   m_OverrideInteractorLineLength: 1
   m_LineLength: 10
   m_WidthCurve:
@@ -7673,7 +7673,7 @@ LineRenderer:
   m_Positions: []
   m_Parameters:
     serializedVersion: 3
-    widthMultiplier: 0.02
+    widthMultiplier: 0.018
     widthCurve:
       serializedVersion: 2
       m_Curve:
@@ -7840,7 +7840,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb830daaa4d26664f877b40781719c03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 2122998956}
   m_HoverToSelect: 0
   m_HoverTimeToSelect: 0.5
 --- !u!114 &2122998956
@@ -7857,8 +7857,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_UpdateTrackingType: 0
   m_EnableInputActions: 1
-  m_ControllerNode: 6
-  m_SelectUsage: 3
+  m_ControllerNode: 5
+  m_SelectUsage: 1
   m_ActivateUsage: 2
   m_UIPressUsage: 2
   m_AxisToPressThreshold: 0.1
