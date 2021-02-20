@@ -2527,10 +2527,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   painting: {fileID: 8300000, guid: 3529e4edf639d2b4da44042e6e67097f, type: 3}
+  yourButton: {fileID: 0}
   drawInput: 16384
   drawPositionSource: {fileID: 440478560}
   lineWidth: 0.03
   lineMaterial: {fileID: 10306, guid: 0000000000000000f000000000000000, type: 3}
+  red: {fileID: 0}
   distanceThreshold: 0.05
 --- !u!114 &861159703
 MonoBehaviour:
@@ -4358,8 +4360,6 @@ GameObject:
   - component: {fileID: 1634412092}
   - component: {fileID: 1634412091}
   - component: {fileID: 1634412094}
-  - component: {fileID: 1634412095}
-  - component: {fileID: 1634412096}
   m_Layer: 5
   m_Name: Red_btn
   m_TagString: Untagged
@@ -4407,9 +4407,9 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_NormalColor: {r: 0.9339623, g: 0.20705767, b: 0.20705767, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_PressedColor: {r: 0, g: 0, b: 0, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
@@ -4429,18 +4429,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1634412092}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 11500000, guid: dd9de300e1079fd459e47ce820e65161, type: 3}
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1634412092
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4490,32 +4479,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 100, y: 30, z: 0.1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1634412095
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1634412089}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dd9de300e1079fd459e47ce820e65161, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  newMaterial: {fileID: 2100000, guid: 5e8ae0651ccef7b4c8a89415125bacd9, type: 2}
-  splash: {fileID: 8300000, guid: c44c7d8c819a4f047a33253db4396ef6, type: 3}
---- !u!114 &1634412096
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1634412089}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b00ab18465cf61444bbbfdd70483c1d1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1771744748
 GameObject:
   m_ObjectHideFlags: 0
@@ -5058,10 +5021,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   painting: {fileID: 8300000, guid: 3529e4edf639d2b4da44042e6e67097f, type: 3}
+  yourButton: {fileID: 1634412091}
   drawInput: 16384
   drawPositionSource: {fileID: 440478560}
   lineWidth: 0.03
   lineMaterial: {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
+  red: {fileID: 2100000, guid: 5e8ae0651ccef7b4c8a89415125bacd9, type: 2}
   distanceThreshold: 0.05
 --- !u!114 &1978033138
 MonoBehaviour:
