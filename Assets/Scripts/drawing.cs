@@ -10,13 +10,28 @@ public class drawing : MonoBehaviour
 
     AudioSource m_MyAudioSource;
 
-    public Button yourButton;
+    //Palette button
+    public Button RedButton;
+    public Button PinkButton;
+    public Button GreenButton;
+    public Button BlueButton;
+    public Button YellowButton;
+    public Button WhiteButton;
+    public Button SwapButton;
+
+    //Palette material
+    public Material red;
+    public Material pink;
+    public Material green;
+    public Material yellow;
+    public Material white;
+    public Material blue;
 
     public OVRInput.Button drawInput;
     public Transform drawPositionSource;
     public float lineWidth = 0.03f;
     public Material lineMaterial;
-    public Material red;
+    
     public float distanceThreshold = 0.05f;
 
     private List<Vector3> currentLinePositions = new List<Vector3>();
