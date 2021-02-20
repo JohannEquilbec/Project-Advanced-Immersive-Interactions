@@ -46,13 +46,53 @@ public class drawing : MonoBehaviour
         controller = GetComponent<XRController>();
         m_MyAudioSource = GetComponent<AudioSource>();
 
-        Button btn = yourButton.GetComponent<Button>();
-        btn.onClick.AddListener(OnClick);
+        Button btnRed = RedButton.GetComponent<Button>();
+        btnRed.onClick.AddListener(OnClickRED);
+
+        Button btnpink = RedButton.GetComponent<Button>();
+        btnpink.onClick.AddListener(OnClickPINk);
+
+        Button btngreen = RedButton.GetComponent<Button>();
+        btngreen.onClick.AddListener(OnClickGREEN);
+
+        Button btnyellow = RedButton.GetComponent<Button>();
+        btnyellow.onClick.AddListener(OnClickYELLOW);
+
+        Button btnwhite = RedButton.GetComponent<Button>();
+        btnwhite.onClick.AddListener(OnClickWHITE);
+
+        Button btnblue = RedButton.GetComponent<Button>();
+        btnblue.onClick.AddListener(OnClickBLUE);
     }
 
-    void OnClick()
+    void OnClickRED()
     {
         lineMaterial = red;
+    }
+
+    void OnClickPINk()
+    {
+        lineMaterial = pink;
+    }
+
+    void OnClickGREEN()
+    {
+        lineMaterial = green;
+    }
+
+    void OnClickYELLOW()
+    {
+        lineMaterial = yellow;
+    }
+
+    void OnClickWHITE()
+    {
+        lineMaterial = white;
+    }
+
+    void OnClickBLUE()
+    {
+        lineMaterial = blue;
     }
 
     // Update is called once per frame
