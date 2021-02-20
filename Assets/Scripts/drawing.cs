@@ -51,6 +51,23 @@ public class drawing : MonoBehaviour
     private bool isPressed = false;
     private LineRenderer currentLine;
 
+
+    //public XRNode inputSource;
+    public Transform movementSource;
+
+    public float newPositionThresholdDistance = 0.05f;
+    public GameObject debugCubePrefab;
+    public bool creationMode = true;
+    public string newGestureName;
+
+    public float recognitionThreshold = 0.9f;
+
+    public float recognitionDelay = 1.5f;
+    private float timer = 0;
+    private bool isMoving = false;
+    private int strokeID = 0;
+    private List<Vector3> positionsList = new List<Vector3>();
+
     // Start is called before the first frame update
     void Start()
     {
@@ -161,24 +178,50 @@ public class drawing : MonoBehaviour
         {
             isPressed = false;
         }
+        if (persistant == true)
+        {
 
-        if (!isDrawing && isPressed)
-        {
-            StartDrawing();
+            if (!isDrawing && isPressed)
+            {
+                StartDrawing();
+            }
+            else if (isDrawing && !isPressed)
+            {
+                StopDrawing();
+            }
+            else if (isDrawing && isPressed)
+            {
+                UpdateDrawing();
+            }
         }
-        else if (isDrawing && !isPressed)
+        else
         {
-            StopDrawing();
-        }
-        else if (isDrawing && isPressed)
-        {
-            UpdateDrawing();
-        }
+            //Start The Movement
+            if (!isMoving && isPressed)
+            {
+                strokeID = 0;
+                StartMovement();
+            }
+            //Ending The Movement
+            else if (isMoving && !isPressed)
+            {
+                timer += Time.deltaTime;
+                if (timer > recognitionDelay)
+                    EndMovement();
+            }
+            //Updating The Movement
+            else if (isMoving && isPressed)
+            {
+                if (timer > 0)
+                {
+                    strokeID++;
+                }
 
-        if (OVRInput.Get(OVRInput.RawButton.DpadLeft) == true)
-        {
-            SetLineMaterial(blue);
+                timer = 0;
+                UpdateMovement();
+            }
         }
+    
     }
 
     public void SetRightColor()
@@ -278,11 +321,40 @@ public class drawing : MonoBehaviour
         
     }
 
+    void StartMovement()
+    {
+        Debug.Log("Start Movement");
+        isMoving = true;
+        positionsList.Clear();
+        positionsList.Add(movementSource.position);
 
+        if (debugCubePrefab)
+            Destroy(Instantiate(debugCubePrefab, movementSource.position, Quaternion.identity), 3);
+    }
+
+    void EndMovement()
+    {
+        Debug.Log("End Movement");
+        isMoving = false;
+
+    }
+
+    void UpdateMovement()
+    {
+        Debug.Log("Update Movement");
+        Vector3 lastPosition = positionsList[positionsList.Count - 1];
+
+        if (Vector3.Distance(movementSource.position, lastPosition) > newPositionThresholdDistance)
+        {
+            positionsList.Add(movementSource.position);
+            if (debugCubePrefab)
+                Destroy(Instantiate(debugCubePrefab, movementSource.position, Quaternion.identity), 3);
+        }
+    }
 
     //////////////////////////////// MENU ////////////////////////////////////
-    
-  
+
+
     /// SWAP /// 
     /// 
     public void OnClickSWAP()
