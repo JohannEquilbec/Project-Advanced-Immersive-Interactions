@@ -50,9 +50,10 @@ public class drawing : MonoBehaviour
 
         lineMaterial = red;
 
-       /* Button btnRed = RedButton.GetComponent<Button>();
+        Button btnRed = RedButton.GetComponent<Button>();
         btnRed.onClick.AddListener(OnClickRED);
 
+        /*
         Button btnpink = RedButton.GetComponent<Button>();
         btnpink.onClick.AddListener(OnClickPINk);
 
@@ -115,6 +116,11 @@ public class drawing : MonoBehaviour
     public void SetLineMaterial(Material newMat)
     {
         lineMaterial = newMat;
+    }
+
+    public void OnClickRED()
+    {
+        lineMaterial = red;
     }
 
     void StartDrawing()
