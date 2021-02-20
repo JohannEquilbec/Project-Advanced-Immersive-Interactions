@@ -19,6 +19,8 @@ public class drawing : MonoBehaviour
     public Button WhiteButton;
     public Button SwapButton;
 
+    Dropdown m_Dropdown;
+
     //Palette material
     public Material red;
     public Material pink;
@@ -53,6 +55,11 @@ public class drawing : MonoBehaviour
         Button btnRed = RedButton.GetComponent<Button>();
         btnRed.onClick.AddListener(OnClickRED);
 
+        m_Dropdown = GetComponent<Dropdown>();
+        m_Dropdown.onValueChanged.AddListener(delegate {
+            DropdownValueChanged(m_Dropdown);
+        });
+
         /*
         Button btnpink = RedButton.GetComponent<Button>();
         btnpink.onClick.AddListener(OnClickPINk);
@@ -73,7 +80,17 @@ public class drawing : MonoBehaviour
         SwapButton.onClick.AddListener(OnClickSWAP);
        */
     }
-
+    void DropdownValueChanged(Dropdown change)
+    {
+        if (change.value == 1)
+        {
+            SetLineMaterial(red);
+        }
+        if (change.value == 2)
+        {
+            SetLineMaterial(white);
+        }
+    }
 
     // Update is called once per frame
     void Update()
