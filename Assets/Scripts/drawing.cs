@@ -80,7 +80,7 @@ public class drawing : MonoBehaviour
         SwapButton.onClick.AddListener(OnClickSWAP);
        */
     }
-    void DropdownValueChanged(Dropdown change)
+    public void DropdownValueChanged(Dropdown change)
     {
         if (change.value == 1)
         {
