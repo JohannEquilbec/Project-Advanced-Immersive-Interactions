@@ -1847,16 +1847,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 532019998}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
+  m_Script: {fileID: 11500000, guid: ab68ce6587aab0146b8dabefbd806791, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_HorizontalAxis: Horizontal
-  m_VerticalAxis: Vertical
-  m_SubmitButton: Submit
-  m_CancelButton: Cancel
-  m_InputActionsPerSecond: 10
-  m_RepeatDelay: 0.5
-  m_ForceModuleActive: 0
+  clickSpeed: 0.3
+  moveDeadzone: 0.6
+  repeatDelay: 0.5
+  repeatRate: 0.1
+  trackedDeviceDragThresholdMultiplier: 2
+  m_MaxTrackedDeviceRaycastDistance: 1000
+  m_EnableXRInput: 1
+  m_EnableMouseInput: 1
+  m_EnableTouchInput: 1
 --- !u!114 &532020000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2759,6 +2761,7 @@ MonoBehaviour:
   yellow: {fileID: 0}
   white: {fileID: 0}
   blue: {fileID: 0}
+  persistant: 1
   drawInput: 16384
   drawPositionSource: {fileID: 440478560}
   lineWidth: 0.03
@@ -5286,6 +5289,7 @@ GameObject:
   - component: {fileID: 1905802817}
   - component: {fileID: 1905802816}
   - component: {fileID: 1905802815}
+  - component: {fileID: 1905802818}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -5373,6 +5377,24 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &1905802818
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1905802813}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7951c64acb0fa62458bf30a60089fe2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreReversedGraphics: 0
+  m_CheckFor2DOcclusion: 0
+  m_CheckFor3DOcclusion: 0
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 2147483647
 --- !u!1 &1910691394
 GameObject:
   m_ObjectHideFlags: 0
@@ -5576,6 +5598,7 @@ MonoBehaviour:
   yellow: {fileID: 2100000, guid: 849ec07683b936448846e7db3d57ef8c, type: 2}
   white: {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
   blue: {fileID: 2100000, guid: 903442685ff54ee43acf3b0dbd0d4dea, type: 2}
+  persistant: 1
   drawInput: 16384
   drawPositionSource: {fileID: 440478560}
   lineWidth: 0.03
