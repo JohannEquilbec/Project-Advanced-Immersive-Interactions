@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.XR.Interaction.Toolkit;
 
 public class drawing : MonoBehaviour
@@ -9,10 +10,13 @@ public class drawing : MonoBehaviour
 
     AudioSource m_MyAudioSource;
 
+    public Button yourButton;
+
     public OVRInput.Button drawInput;
     public Transform drawPositionSource;
     public float lineWidth = 0.03f;
     public Material lineMaterial;
+    public Material red;
     public float distanceThreshold = 0.05f;
 
     private List<Vector3> currentLinePositions = new List<Vector3>();
@@ -26,6 +30,14 @@ public class drawing : MonoBehaviour
     {
         controller = GetComponent<XRController>();
         m_MyAudioSource = GetComponent<AudioSource>();
+
+        Button btn = yourButton.GetComponent<Button>();
+        btn.onClick.AddListener(OnClick);
+    }
+
+    void OnClick()
+    {
+        lineMaterial = red;
     }
 
     // Update is called once per frame

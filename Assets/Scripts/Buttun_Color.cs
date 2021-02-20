@@ -2,18 +2,20 @@
 using UnityEngine.UI;
 using System.Collections;
 
-public class ClickExample : MonoBehaviour
+public class Buttun_Color : MonoBehaviour
 {
 	public Button yourButton;
+	public Material lineMaterial;
+	public Material newMat;
 
 	void Start()
 	{
 		Button btn = yourButton.GetComponent<Button>();
-		btn.onClick.AddListener(TaskOnClick);
+		btn.onClick.AddListener(OnClick);
 	}
 
-	void TaskOnClick()
-	{
-		Debug.Log("You have clicked the button!");
+	void OnClick()
+	{	
+	lineMaterial = newMat;
 	}
 }
