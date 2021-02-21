@@ -55,23 +55,6 @@ public class drawing : MonoBehaviour
     private bool isPressed = false;
     private LineRenderer currentLine;
 
-
-    //public XRNode inputSource;
-    public Transform movementSource;
-
-    public float newPositionThresholdDistance = 0.05f;
-    public GameObject debugCubePrefab;
-    public bool creationMode = true;
-    public string newGestureName;
-
-    public float recognitionThreshold = 0.9f;
-
-    public float recognitionDelay = 1.5f;
-    private float timer = 0;
-    private bool isMoving = false;
-    private int strokeID = 0;
-    private List<Vector3> positionsList = new List<Vector3>();
-
     // Start is called before the first frame update
     void Start()
     {
