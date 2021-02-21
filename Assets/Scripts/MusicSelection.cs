@@ -5,19 +5,21 @@ using UnityEngine.UI;
 
 public class MusicSelection : MonoBehaviour
 {
-    public AudioSource biscuit;
+    //public AudioSource biscuit;
     public AudioSource clair_de_lune;
     public AudioSource previous;
 
     public bool isBiscuit;
     public bool isClair;
 
+    public bool isClairPlaying;
+
     Dropdown musicSelector;
 
     // Start is called before the first frame update
     void Start()
     {
-        biscuit = GetComponent<AudioSource>();
+        //biscuit = GetComponent<AudioSource>();
         clair_de_lune = GetComponent<AudioSource>();
 
         musicSelector = GetComponent<Dropdown>();
@@ -27,7 +29,7 @@ public class MusicSelection : MonoBehaviour
 
         //biscuit.Play();
         //clair_de_lune.Stop();
-        previous = biscuit;
+        //previous = biscuit;
     }
 
     // Update is called once per frame
@@ -44,10 +46,11 @@ public class MusicSelection : MonoBehaviour
             //clair_de_lune.Stop();
             //biscuit.Play();
         }
-        else if (isClair)
+        else if (isClair && isClairPlaying == false)
         {
+            isClairPlaying = true;
             //biscuit.Stop();
-            //clair_de_lune.Play();
+            clair_de_lune.Play();
         }
     }
 
