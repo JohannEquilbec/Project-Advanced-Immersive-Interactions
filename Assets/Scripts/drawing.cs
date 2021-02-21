@@ -28,6 +28,8 @@ public class drawing : MonoBehaviour
     public Material yellow;
     public Material white;
     public Material blue;
+    public Material ligth;
+    public Material leaf;
 
     public bool isRed;
     public bool isPink;
@@ -35,6 +37,8 @@ public class drawing : MonoBehaviour
     public bool isYellow;
     public bool isWhite;
     public bool isBlue;
+    public bool isligth;
+    public bool isleaf;
 
     public bool persistant = true;
 
@@ -114,7 +118,9 @@ public class drawing : MonoBehaviour
             isYellow = false;
             isWhite = true;
             isBlue = false;
-        }
+            isligth = false;
+            isleaf = false ;
+}
         else if (change.value == 1) // Blue
         {
             isRed = false;
@@ -123,6 +129,8 @@ public class drawing : MonoBehaviour
             isYellow = false;
             isWhite = false;
             isBlue = true;
+            isligth = false;
+            isleaf = false;
         }
         else if (change.value == 2) // Red
         {
@@ -132,6 +140,8 @@ public class drawing : MonoBehaviour
             isYellow = false;
             isWhite = false;
             isBlue = false;
+            isligth = false;
+            isleaf = false;
         }
         else if (change.value == 3) // Green
         {
@@ -141,6 +151,8 @@ public class drawing : MonoBehaviour
             isYellow = false;
             isWhite = false;
             isBlue = false;
+            isligth = false;
+            isleaf = false;
         }
         else if (change.value == 4) // Pink
         {
@@ -150,6 +162,8 @@ public class drawing : MonoBehaviour
             isYellow = false;
             isWhite = false;
             isBlue = false;
+            isligth = false;
+            isleaf = false;
         }
         else if (change.value == 5) // Yellow
         {
@@ -159,6 +173,32 @@ public class drawing : MonoBehaviour
             isYellow = true;
             isWhite = false;
             isBlue = false;
+            isligth = false;
+            isleaf = false;
+        }
+
+        else if (change.value == 6 ) // light
+        {
+            isRed = false;
+            isPink = false;
+            isGreen = false;
+            isYellow = false;
+            isWhite = false;
+            isBlue = false;
+            isligth = true;
+            isleaf = false;
+        }
+
+        else if (change.value == 7) // leaf
+        {
+            isRed = false;
+            isPink = false;
+            isGreen = false;
+            isYellow = false;
+            isWhite = false;
+            isBlue = false;
+            isligth = false;
+            isleaf = true;
         }
     }
 

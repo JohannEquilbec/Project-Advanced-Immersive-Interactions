@@ -3733,12 +3733,16 @@ MonoBehaviour:
   yellow: {fileID: 0}
   white: {fileID: 0}
   blue: {fileID: 0}
+  ligth: {fileID: 0}
+  leaf: {fileID: 0}
   isRed: 0
   isPink: 0
   isGreen: 0
   isYellow: 0
   isWhite: 0
   isBlue: 0
+  isligth: 0
+  isleaf: 0
   persistant: 1
   drawInput: 16384
   drawPositionSource: {fileID: 440478560}
@@ -5562,6 +5566,10 @@ MonoBehaviour:
     - m_Text: Pink
       m_Image: {fileID: 0}
     - m_Text: Yellow
+      m_Image: {fileID: 0}
+    - m_Text: Light
+      m_Image: {fileID: 0}
+    - m_Text: Leaf
       m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:
@@ -7926,14 +7934,18 @@ MonoBehaviour:
   pink: {fileID: 2100000, guid: 75c23eaa020212e43bf983c71e2784f5, type: 2}
   green: {fileID: 2100000, guid: d7ebdd11889698f4f924b3f379cb9941, type: 2}
   yellow: {fileID: 2100000, guid: 849ec07683b936448846e7db3d57ef8c, type: 2}
-  white: {fileID: 10306, guid: 0000000000000000f000000000000000, type: 3}
+  white: {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
   blue: {fileID: 2100000, guid: 903442685ff54ee43acf3b0dbd0d4dea, type: 2}
+  ligth: {fileID: 2100000, guid: a439cfb9369c1404d9db2e5580667b14, type: 2}
+  leaf: {fileID: 2100000, guid: 2e13f1229956e2542a798565bbaf32be, type: 2}
   isRed: 0
   isPink: 0
   isGreen: 0
   isYellow: 0
   isWhite: 0
   isBlue: 0
+  isligth: 0
+  isleaf: 0
   persistant: 1
   drawInput: 16384
   drawPositionSource: {fileID: 440478560}
