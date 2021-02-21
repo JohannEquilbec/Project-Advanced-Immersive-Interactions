@@ -31,14 +31,14 @@ public class drawing : MonoBehaviour
     public Material ligth;
     public Material leaf;
 
-    public bool isRed;
-    public bool isPink;
-    public bool isGreen;
-    public bool isYellow;
-    public bool isWhite;
-    public bool isBlue;
-    public bool isligth;
-    public bool isleaf;
+    public bool isRed = false;
+    public bool isPink = false;
+    public bool isGreen = false;
+    public bool isYellow = false;
+    public bool isWhite = true;
+    public bool isBlue = false;
+    public bool isLigth = false;
+    public bool isLeaf = false;
 
     public bool persistant = true;
 
@@ -78,7 +78,7 @@ public class drawing : MonoBehaviour
         controller = GetComponent<XRController>();
         painting = GetComponent<AudioSource>();
 
-        lineMaterial = red;
+        lineMaterial = white;
 
         Button btnRed = RedButton.GetComponent<Button>();
         btnRed.onClick.AddListener(OnClickRED);
@@ -118,8 +118,8 @@ public class drawing : MonoBehaviour
             isYellow = false;
             isWhite = true;
             isBlue = false;
-            isligth = false;
-            isleaf = false ;
+            isLigth = false;
+            isLeaf = false ;
 }
         else if (change.value == 1) // Blue
         {
@@ -129,8 +129,8 @@ public class drawing : MonoBehaviour
             isYellow = false;
             isWhite = false;
             isBlue = true;
-            isligth = false;
-            isleaf = false;
+            isLigth = false;
+            isLeaf = false;
         }
         else if (change.value == 2) // Red
         {
@@ -140,8 +140,8 @@ public class drawing : MonoBehaviour
             isYellow = false;
             isWhite = false;
             isBlue = false;
-            isligth = false;
-            isleaf = false;
+            isLigth = false;
+            isLeaf = false;
         }
         else if (change.value == 3) // Green
         {
@@ -151,8 +151,8 @@ public class drawing : MonoBehaviour
             isYellow = false;
             isWhite = false;
             isBlue = false;
-            isligth = false;
-            isleaf = false;
+            isLigth = false;
+            isLeaf = false;
         }
         else if (change.value == 4) // Pink
         {
@@ -162,8 +162,8 @@ public class drawing : MonoBehaviour
             isYellow = false;
             isWhite = false;
             isBlue = false;
-            isligth = false;
-            isleaf = false;
+            isLigth = false;
+            isLeaf = false;
         }
         else if (change.value == 5) // Yellow
         {
@@ -173,8 +173,8 @@ public class drawing : MonoBehaviour
             isYellow = true;
             isWhite = false;
             isBlue = false;
-            isligth = false;
-            isleaf = false;
+            isLigth = false;
+            isLeaf = false;
         }
 
         else if (change.value == 6 ) // light
@@ -185,8 +185,8 @@ public class drawing : MonoBehaviour
             isYellow = false;
             isWhite = false;
             isBlue = false;
-            isligth = true;
-            isleaf = false;
+            isLigth = true;
+            isLeaf = false;
         }
 
         else if (change.value == 7) // leaf
@@ -197,8 +197,8 @@ public class drawing : MonoBehaviour
             isYellow = false;
             isWhite = false;
             isBlue = false;
-            isligth = false;
-            isleaf = true;
+            isLigth = false;
+            isLeaf = true;
         }
     }
 
@@ -262,6 +262,16 @@ public class drawing : MonoBehaviour
         else if (isGreen)
         {
             SetLineMaterial(green);
+        }
+        /*
+        else if (isLight)
+        {
+            SetLineMaterial(light);
+        }
+        */
+        else if (isLeaf)
+        {
+            SetLineMaterial(leaf);
         }
     }
 
