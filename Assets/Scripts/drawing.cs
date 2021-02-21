@@ -217,7 +217,6 @@ public class drawing : MonoBehaviour
                 UpdateDrawing();
             }
         }
-    
     }
 
     public void SetRightColor()

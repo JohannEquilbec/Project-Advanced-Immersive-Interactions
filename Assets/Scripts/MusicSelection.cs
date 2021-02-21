@@ -9,8 +9,8 @@ public class MusicSelection : MonoBehaviour
     public AudioSource clair_de_lune;
     public AudioSource previous;
 
-    public bool isBiscuit = true;
-    public bool isClair = false;
+    public bool isBiscuit;
+    public bool isClair;
 
     Dropdown musicSelector;
 
@@ -25,38 +25,61 @@ public class MusicSelection : MonoBehaviour
             MusicSelectorValueChanged(musicSelector);
         });
 
-        biscuit.Play();
-        clair_de_lune.Stop();
+        //biscuit.Play();
+        //clair_de_lune.Stop();
         previous = biscuit;
     }
 
     // Update is called once per frame
     void Update()
     {
-        biscuit.Stop();
+        SetRightMusic();
+        //biscuit.Stop();
     }
 
-    public void MusicSelectorValueChanged(Dropdown change)
+    public void SetRightMusic()
+    {
+        if (isBiscuit == true)
+        {
+            //clair_de_lune.Stop();
+            //biscuit.Play();
+        }
+        else if (isClair)
+        {
+            //biscuit.Stop();
+            //clair_de_lune.Play();
+        }
+    }
+
+        public void MusicSelectorValueChanged(Dropdown change)
     {
         if (change.value == 0) // Biscuit
         {
+            isBiscuit = true;
+            isClair = false;
+            /*
             if(previous != biscuit)
             {
-                previous.Stop();
-                clair_de_lune.Stop();
+                //previous.Stop();
+                //clair_de_lune.Stop();
                 biscuit.Play();
                 previous = biscuit;
             }
+            */
         }
         else if (change.value == 1) // Clair de lune
         {
+            isBiscuit = false;
+            isClair = true;
+            /*
             if (previous != clair_de_lune)
             {
-                previous.Stop();
-                biscuit.Stop();
+                //previous.Stop();
+                //biscuit.Stop();
                 clair_de_lune.Play();
                 previous = clair_de_lune;
             }
+            */
         }
     }
 }
