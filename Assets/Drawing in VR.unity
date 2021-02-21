@@ -3763,6 +3763,7 @@ MonoBehaviour:
   yellow: {fileID: 0}
   white: {fileID: 0}
   blue: {fileID: 0}
+  black: {fileID: 0}
   ligth: {fileID: 0}
   leaf: {fileID: 0}
   isRed: 0
@@ -3771,6 +3772,7 @@ MonoBehaviour:
   isYellow: 0
   isWhite: 0
   isBlue: 0
+  isBlack: 0
   isLigth: 0
   isLeaf: 0
   persistant: 1
@@ -4288,8 +4290,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 3.66, y: -1.45}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: 3.66, y: -1.39}
+  m_SizeDelta: {x: 200, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &927753060
 MonoBehaviour:
@@ -5595,7 +5597,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0.01}
+  m_AnchoredPosition: {x: 0, y: -1.39}
   m_SizeDelta: {x: 100, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1282389429
@@ -5657,6 +5659,8 @@ MonoBehaviour:
     - m_Text: Pink
       m_Image: {fileID: 0}
     - m_Text: Yellow
+      m_Image: {fileID: 0}
+    - m_Text: Black
       m_Image: {fileID: 0}
     - m_Text: Leaf
       m_Image: {fileID: 0}
@@ -5734,7 +5738,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: c44c7d8c819a4f047a33253db4396ef6, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.8
+  m_Volume: 0.4
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -8295,6 +8299,7 @@ MonoBehaviour:
   yellow: {fileID: 2100000, guid: 849ec07683b936448846e7db3d57ef8c, type: 2}
   white: {fileID: 2100000, guid: 74fe1537d53b5cd46894914098269a11, type: 2}
   blue: {fileID: 2100000, guid: 903442685ff54ee43acf3b0dbd0d4dea, type: 2}
+  black: {fileID: 2100000, guid: 71194b5a90188204c869a5f618d62387, type: 2}
   ligth: {fileID: 2100000, guid: a439cfb9369c1404d9db2e5580667b14, type: 2}
   leaf: {fileID: 2100000, guid: 2e13f1229956e2542a798565bbaf32be, type: 2}
   isRed: 0
@@ -8303,6 +8308,7 @@ MonoBehaviour:
   isYellow: 0
   isWhite: 0
   isBlue: 0
+  isBlack: 0
   isLigth: 0
   isLeaf: 0
   persistant: 1

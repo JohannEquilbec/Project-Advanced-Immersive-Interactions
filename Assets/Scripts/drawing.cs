@@ -28,6 +28,7 @@ public class drawing : MonoBehaviour
     public Material yellow;
     public Material white;
     public Material blue;
+    public Material black;
     public Material ligth;
     public Material leaf;
 
@@ -38,6 +39,7 @@ public class drawing : MonoBehaviour
     public bool isYellow = false;
     public bool isWhite = true;
     public bool isBlue = false;
+    public bool isBlack = false;
     public bool isLigth = false;
     public bool isLeaf = false;
 
@@ -63,7 +65,7 @@ public class drawing : MonoBehaviour
         controller = GetComponent<XRController>();
         painting = GetComponent<AudioSource>();
 
-        lineMaterial = white;
+        isWhite = true; // First color in use
 
         Button btnRed = RedButton.GetComponent<Button>();
         btnRed.onClick.AddListener(OnClickRED);
@@ -103,9 +105,10 @@ public class drawing : MonoBehaviour
             isYellow = false;
             isWhite = true;
             isBlue = false;
+            isBlack = false;
             isLigth = false;
-            isLeaf = false ;
-}
+            isLeaf = false;
+        }
         else if (change.value == 1) // Blue
         {
             isRed = false;
@@ -114,6 +117,7 @@ public class drawing : MonoBehaviour
             isYellow = false;
             isWhite = false;
             isBlue = true;
+            isBlack = false;
             isLigth = false;
             isLeaf = false;
         }
@@ -125,6 +129,7 @@ public class drawing : MonoBehaviour
             isYellow = false;
             isWhite = false;
             isBlue = false;
+            isBlack = false;
             isLigth = false;
             isLeaf = false;
         }
@@ -136,6 +141,7 @@ public class drawing : MonoBehaviour
             isYellow = false;
             isWhite = false;
             isBlue = false;
+            isBlack = false;
             isLigth = false;
             isLeaf = false;
         }
@@ -147,6 +153,7 @@ public class drawing : MonoBehaviour
             isYellow = false;
             isWhite = false;
             isBlue = false;
+            isBlack = false;
             isLigth = false;
             isLeaf = false;
         }
@@ -158,6 +165,7 @@ public class drawing : MonoBehaviour
             isYellow = true;
             isWhite = false;
             isBlue = false;
+            isBlack = false;
             isLigth = false;
             isLeaf = false;
         }
@@ -170,12 +178,23 @@ public class drawing : MonoBehaviour
             isYellow = false;  // This material isn't recognized by Unity 
             isWhite = false;
             isBlue = false;
+            isBlack = false;
             isLigth = true;
             isLeaf = false;
         }
         */
-
-        else if (change.value == 6) // leaf
+        else if (change.value == 6) // black
+        {
+            isRed = false;
+            isPink = false;
+            isGreen = false;
+            isYellow = false;  
+            isWhite = false;
+            isBlue = false;
+            isBlack = true;
+            isLigth = true;
+        }
+        else if (change.value == 7) // leaf
         {
             isRed = false;
             isPink = false;
@@ -183,6 +202,7 @@ public class drawing : MonoBehaviour
             isYellow = false;
             isWhite = false;
             isBlue = false;
+            isBlack = false;
             isLigth = false;
             isLeaf = true;
         }
@@ -253,6 +273,10 @@ public class drawing : MonoBehaviour
             SetLineMaterial(light);
         }
         */
+        else if (isBlack)
+        {
+            SetLineMaterial(black);
+        }
         else if (isLeaf)
         {
             SetLineMaterial(leaf);
