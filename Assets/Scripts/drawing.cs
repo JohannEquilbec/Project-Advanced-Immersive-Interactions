@@ -8,9 +8,9 @@ public class drawing : MonoBehaviour
 {
     //public AudioClip painting;
 
-    public AudioSource painting;
+    public AudioSource painting; // Sound played when the user is painting
 
-    //Palette button
+    // Palette buttons on the menu
     public Button RedButton;
     public Button PinkButton;
     public Button GreenButton;
@@ -21,7 +21,7 @@ public class drawing : MonoBehaviour
 
     Dropdown m_Dropdown;
 
-    //Palette material
+    // Palette materials
     public Material red;
     public Material pink;
     public Material green;
@@ -31,6 +31,7 @@ public class drawing : MonoBehaviour
     public Material ligth;
     public Material leaf;
 
+    // Booleans to know what color is currently in use
     public bool isRed = false;
     public bool isPink = false;
     public bool isGreen = false;
@@ -40,6 +41,7 @@ public class drawing : MonoBehaviour
     public bool isLigth = false;
     public bool isLeaf = false;
 
+    // Used to switch modes of drawing
     public bool persistant = true;
 
     public OVRInput.Button drawInput;
@@ -159,20 +161,21 @@ public class drawing : MonoBehaviour
             isLigth = false;
             isLeaf = false;
         }
-
+        /*
         else if (change.value == 6 ) // light
         {
             isRed = false;
             isPink = false;
             isGreen = false;
-            isYellow = false;
+            isYellow = false;  // This material isn't recognized by Unity 
             isWhite = false;
             isBlue = false;
             isLigth = true;
             isLeaf = false;
         }
+        */
 
-        else if (change.value == 7) // leaf
+        else if (change.value == 6) // leaf
         {
             isRed = false;
             isPink = false;
@@ -192,7 +195,7 @@ public class drawing : MonoBehaviour
         SetRightColor();
 
         //Check if input down
-        //OVRInput.Button.IsPressed(controller.inputDevice, drawInput, out bool isPressed);
+        //OVRInput.Button.IsPressed(controller.inputDevice, drawInput, out bool isPressed);  // Doesn't work properly
         if (OVRInput.Get(OVRInput.Button.One) == true)
         {
             isPressed = true;
@@ -201,9 +204,8 @@ public class drawing : MonoBehaviour
         {
             isPressed = false;
         }
-        if (persistant == true)
+        if (persistant == true) // Drawing persistant lines
         {
-
             if (!isDrawing && isPressed)
             {
                 StartDrawing();
@@ -262,7 +264,7 @@ public class drawing : MonoBehaviour
         lineMaterial = newMat;
     }
 
-    public void OnClickRED()
+    public void OnClickRED() // Test for the button 
     {
         lineMaterial = red;
     }
@@ -270,14 +272,16 @@ public class drawing : MonoBehaviour
     void StartDrawing()
     {
         if (persistant== true) { 
-        isDrawing = true;
-        //create line
-        GameObject lineGameObject = new GameObject("Line");
-        currentLine = lineGameObject.AddComponent<LineRenderer>();
+        
+            isDrawing = true;
 
-        UpdateLine();
-        //MakeSound(painting);
-        painting.Play();
+            //create line
+            GameObject lineGameObject = new GameObject("Line");
+            currentLine = lineGameObject.AddComponent<LineRenderer>();
+
+            UpdateLine();
+            //MakeSound(painting);
+            painting.Play();
         }
     }
 
@@ -317,8 +321,8 @@ public class drawing : MonoBehaviour
             if (!currentLine || currentLinePositions.Count == 0)
             return;
 
-        Vector3 lastSetPosition = currentLinePositions[currentLinePositions.Count - 1];
-        if (Vector3.Distance(lastSetPosition, drawPositionSource.position) > distanceThreshold)
+            Vector3 lastSetPosition = currentLinePositions[currentLinePositions.Count - 1];
+            if (Vector3.Distance(lastSetPosition, drawPositionSource.position) > distanceThreshold)
         {
             UpdateLine();
         }
@@ -330,7 +334,7 @@ public class drawing : MonoBehaviour
 
     /// SWAP /// 
     /// 
-    public void OnClickSWAP()
+    public void OnClickSWAP() // Change the two drawing mode
     {
         if (persistant == true)
         {

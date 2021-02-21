@@ -5,21 +5,20 @@ using UnityEngine.UI;
 
 public class MusicSelection : MonoBehaviour
 {
-    //public AudioSource biscuit;
+    public AudioSource biscuit;
     public AudioSource clair_de_lune;
-    public AudioSource previous;
+    public AudioSource previous; // Used to know which song is currently playing, so it doesn't restart from the beginning
 
+    // Boolean to know what sound to play
     public bool isBiscuit;
     public bool isClair;
-
-    public bool isClairPlaying;
 
     Dropdown musicSelector;
 
     // Start is called before the first frame update
     void Start()
     {
-        //biscuit = GetComponent<AudioSource>();
+        biscuit = GetComponent<AudioSource>();
         clair_de_lune = GetComponent<AudioSource>();
 
         musicSelector = GetComponent<Dropdown>();
@@ -27,33 +26,38 @@ public class MusicSelection : MonoBehaviour
             MusicSelectorValueChanged(musicSelector);
         });
 
-        //biscuit.Play();
-        //clair_de_lune.Stop();
-        //previous = biscuit;
+        // By default, the "chill" song is playing
+        biscuit.Play();
+        
+        isBiscuit = true;
+        isClair = false;
+
+        previous = biscuit;
     }
 
     // Update is called once per frame
     void Update()
     {
         SetRightMusic();
-        //biscuit.Stop();
     }
 
     public void SetRightMusic()
     {
-        if (isBiscuit == true)
+        if (isBiscuit == true && previous != biscuit)
         {
-            //clair_de_lune.Stop();
-            //biscuit.Play();
+            clair_de_lune.Stop();
+            biscuit.Play();
+            previous = biscuit;
         }
-        else if (isClair && isClairPlaying == false)
+        else if (isClair == true && previous != clair_de_lune)
         {
-            isClairPlaying = true;
-            //biscuit.Stop();
+            biscuit.Stop();
             clair_de_lune.Play();
+            previous = clair_de_lune;
         }
     }
 
+        // Clicking on the song changes which song is currently playing
         public void MusicSelectorValueChanged(Dropdown change)
     {
         if (change.value == 0) // Biscuit

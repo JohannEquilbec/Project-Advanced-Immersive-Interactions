@@ -4406,11 +4406,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c135f9201432de4da4531cc88e0e67b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  biscuit: {fileID: 0}
   clair_de_lune: {fileID: 1674746102}
   previous: {fileID: 0}
   isBiscuit: 0
   isClair: 0
-  isClairPlaying: 0
 --- !u!1001 &930532037
 PrefabInstance:
   m_ObjectHideFlags: 0
